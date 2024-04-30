@@ -3,8 +3,8 @@
     <CharacterList :characters="characters" />
     <div>
         <h3>{{ characters.page }}</h3>
-        <Button @btn-click="prevPage(characters.page)" class="btn" text="Prev"/>
-        <Button @btn-click="nextPage(characters.page)" class="btn" text="Next" />
+        <Button @btn-click="prevPage(characters.page)" v-show="characters.page>1" class="btn" text="Prev"/>
+        <Button @btn-click="nextPage(characters.page)" v-show="characters.page<6" class="btn" text="Next" />
     </div>
 </template>
 
@@ -28,10 +28,12 @@ export default {
         async prevPage(page) {
             page--
             this.characters = await this.fetchCharacters(page)
+            window.scrollTo(0, 0)
         },
         async nextPage(page) {
             page++
             this.characters = await this.fetchCharacters(page)
+            window.scrollTo(0, 0)
         },
         async fetchCharacters(page) {
             console.log(page)

@@ -1,7 +1,9 @@
 <template>
     <div>
         <h1> {{ title }}</h1>
-        <img src="../assets/logo.png">
+        <a href="/">
+            <img src="../assets/logo.png">
+        </a>
         <Button class="btn"
         @btn-click="showCharacterList(1)"
         text="Characters"/> 

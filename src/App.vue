@@ -36,6 +36,7 @@ body {
 .container {
   text-align: center;
   align-items: center;
+  justify-content: center;
   max-width: 500px;
   margin: 30px auto;
   min-height: 300px;
