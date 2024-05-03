@@ -1,4 +1,6 @@
 <template>
+    <Button @btn-click="prevPage(characters.page)" v-show="characters.page>1" class="btn" text="Prev"/>
+    <Button @btn-click="nextPage(characters.page)" v-show="characters.page<6" class="btn" text="Next" />
     <h3>Character List</h3>
     <CharacterList :characters="characters" />
     <div>
