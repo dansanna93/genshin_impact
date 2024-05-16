@@ -8,32 +8,36 @@
         </div>
         <div class="form-control">
             <label>Rarity</label>
-            <select name="rarity" id="rarity">
-                <option value="4stars">4*</option>
-                <option value="5stars">5*</option>
+            <select name="rarity" id="rarity"
+            v-model="rarity">
+                <option value="" disabled selected>Choose Rarity...</option>
+                <option value="4_star">4*</option>
+                <option value="5_star">5*</option>
             </select>
         </div>
         <div class="form-control">
             <label>Weapon</label>
             <select name="weapon" id="weapon"
-            placeholder="Choose Weapon...">
-                <option value="bow">Bow</option>
-                <option value="catalyst">Catalyst</option>
-                <option value="claymore">Claymore</option>
-                <option value="polearm">Polearm</option>
-                <option value="sword">Sword</option>
+            v-model="weapon">
+                <option value="" disabled selected>Choose Weapon...</option>
+                <option value="Bow">Bow</option>
+                <option value="Catalyst">Catalyst</option>
+                <option value="Claymore">Claymore</option>
+                <option value="Polearm">Polearm</option>
+                <option value="Sword">Sword</option>
             </select>
         </div>
         <div class="form-control">
             <label>Vision</label>
             <select name="vision" id="vision"
-            placeholder="Choose Vision...">
-                <option value="anemo">Anemo</option>
-                <option value="cryo">Cryo</option>
-                <option value="electro">Electro</option>
-                <option value="geo">Geo</option>
-                <option value="hydro">Hydro</option>
-                <option value="pyro">Pyro</option>
+            v-model="vision">
+                <option value="" disabled selected>Choose Vision...</option>
+                <option value="Anemo">Anemo</option>
+                <option value="Cryo">Cryo</option>
+                <option value="Electro">Electro</option>
+                <option value="Geo">Geo</option>
+                <option value="Hydro">Hydro</option>
+                <option value="Pyro">Pyro</option>
             </select>
         </div>
         <input type="submit" value="Search"
@@ -46,6 +50,7 @@
         name: 'SearchCharacter',
         data() {
             return {
+                
                 name: '',
                 rarity: '',
                 weapon: '',
@@ -55,6 +60,20 @@
         methods: {
             onSubmit(e) {
                 e.preventDefault()
+
+                const charAttributes = {
+                    name: this.name,
+                    rarity: this.rarity,
+                    weapon: this.weapon,
+                    vision: this.vision
+                }
+
+                this.$emit('search-character', charAttributes)
+
+                this.name = ''
+                this.rarity = ''
+                this.weapon = ''
+                this.vision = ''
             }
         }
     }
