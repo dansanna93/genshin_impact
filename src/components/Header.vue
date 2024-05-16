@@ -8,10 +8,7 @@
         @btn-click="showCharacterList(1)"
         text="Characters"/> 
         <Button class="btn"
-        @btn-click="$emit('show-banners')"
-        text="Banners"/>
-        <Button class="btn"
-        @btn-click="$emit('search-characters')"
+        @btn-click="showSearch()"
         text="Search"/>
     </div>
 </template>
@@ -29,6 +26,9 @@
         methods: {
             showCharacterList(page) {
                 this.$router.push('/characters', page)
+            },
+            showSearch() {
+                this.$router.push('/search')
             }
         }
     }
