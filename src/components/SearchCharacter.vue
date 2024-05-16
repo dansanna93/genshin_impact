@@ -1,5 +1,5 @@
 <template>
-    <form @submit="onSubmit" class="add-form">
+    <form @submit="onSubmit" class="form">
         <div class="form-control">
             <label>Name</label>
             <input type="text" name="name"
@@ -15,7 +15,7 @@
         </div>
         <div class="form-control">
             <label>Weapon</label>
-            <select name="weapons" id="weapons"
+            <select name="weapon" id="weapon"
             placeholder="Choose Weapon...">
                 <option value="bow">Bow</option>
                 <option value="catalyst">Catalyst</option>
@@ -26,7 +26,7 @@
         </div>
         <div class="form-control">
             <label>Vision</label>
-            <select name="visions" id="visions"
+            <select name="vision" id="vision"
             placeholder="Choose Vision...">
                 <option value="anemo">Anemo</option>
                 <option value="cryo">Cryo</option>
@@ -61,7 +61,7 @@
 </script>
 
 <style scoped>
-.add-form {
+.form {
   margin-bottom: 40px;
 }
 
@@ -74,6 +74,18 @@
 }
 
 .form-control input {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.form-control select {
+  border: none;
+  border-radius: 5px;
   width: 100%;
   height: 40px;
   margin: 5px;

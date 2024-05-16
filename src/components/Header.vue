@@ -8,7 +8,7 @@
         @btn-click="showCharacterList(1)"
         text="Characters"/> 
         <Button class="btn"
-        @btn-click="showSearch()"
+        @btn-click="searchChar()"
         text="Search"/>
     </div>
 </template>
@@ -27,7 +27,7 @@
             showCharacterList(page) {
                 this.$router.push('/characters', page)
             },
-            showSearch() {
+            searchChar() {
                 this.$router.push('/search')
             }
         }
