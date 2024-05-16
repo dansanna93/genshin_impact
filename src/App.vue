@@ -46,7 +46,7 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: #006977;
   color: #fff;
   border: none;
   padding: 10px 20px;
