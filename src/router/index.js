@@ -4,6 +4,8 @@ import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import Characters from '@/views/Characters.vue'
 import Search from '@/views/Search.vue'
+import Login from '@/views/Login.vue'
+
 
 
 const routes = [
@@ -30,6 +32,13 @@ const routes = [
         name: 'Search',
         component: Search,
         meta: { title: 'Genshin Impact | Search' }
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login,
+        meta: { title: 'Genshin Impact | Login' }
+        
     }
 ]
 
