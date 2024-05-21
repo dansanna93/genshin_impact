@@ -38,7 +38,7 @@ export default {
             window.scrollTo(0, 0)
         },
         async fetchCharacters(page) {
-            const res = await fetch(`/api/characters?page=${page}`)
+            const res = await fetch(`https://gsi.fly.dev/characters?page=${page}`)
             const data = await res.json()
             return data
         },

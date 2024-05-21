@@ -11,11 +11,9 @@
         <Button class="btn" text="Register" /> <br>
         <Button class="btn"
         @btn-click="showCharacterList(1)"
-        v-show="isLogged"
         text="Characters"/> 
         <Button class="btn"
         @btn-click="searchChar()"
-        v-show="isLogged"
         text="Search"/>
     </div>
 </template>
